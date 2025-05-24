@@ -40,8 +40,7 @@ const Dashboard = () => {
         const fetchBookings = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const response = await axios.get("https://wanderstay-backend-production.up.railway.app/bookings
-", {
+                const response = await axios.get("https://wanderstay-backend-production.up.railway.app/bookings", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
