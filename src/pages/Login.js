@@ -43,10 +43,7 @@ function Login() {
   email,
   password
 });
-", {
-                email,
-                password
-            });
+
 
 
             // IMplement the logic to store the token in the local storage
