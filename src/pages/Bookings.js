@@ -18,7 +18,7 @@ function Bookings() {
 
     useEffect(() => {
 
-        axios.get("http://localhost:3001/rooms")
+        axios.get("https://wanderstay-backend-production.up.railway.app/rooms")
             .then((response) => {
                 setRooms(response.data);
             })
@@ -30,7 +30,7 @@ function Bookings() {
 
 
     useEffect(() => {
-        axios.get("http://localhost:3001/bookings")
+        axios.get("https://wanderstay-backend-production.up.railway.app/bookings")
             .then((response) => {
                 setBookings(response.data);
             })
@@ -54,7 +54,7 @@ function Bookings() {
 
         try {
             const response = await axios.post(
-                "http://localhost:3001/bookings",
+                "https://wanderstay-backend-production.up.railway.app/bookings",
                 {
                     //quick test data to confirm that the booking works
                     roomId,
