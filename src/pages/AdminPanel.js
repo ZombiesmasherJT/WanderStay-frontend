@@ -61,7 +61,7 @@ const AdminPanel = () => {
         try {
 
             const response = await axios.post(
-                "http://localhost:3001/rooms",
+                "https://wanderstay-backend-production.up.railway.app/rooms",
                 newRoom,
                 {
                     headers: {
