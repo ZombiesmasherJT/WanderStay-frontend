@@ -57,7 +57,7 @@ function Register() {
 
 
         try {
-            const response = await axios.post("http://localhost:3001/auth/register", {
+            const response = await axios.post("https://wanderstay-backend-production.up.railway.app/auth/register", {
                 username,
                 email,
                 password,
