@@ -31,14 +31,14 @@ const AdminPanel = () => {
         // Fetch all rooms from the server for admin panel
 
 
-        axios.get("http://localhost:3001/rooms")
+        axios.get("https://wanderstay-backend-production.up.railway.app/bookings")
             .then((response) => setRooms(response.data))
             .catch((error) => console.error("error when fetching rooms: ", error));
 
 
         // Fetch all bookings from the server for admin panel
 
-        axios.get("http://localhost:3001/bookings", {
+        axios.get("https://wanderstay-backend-production.up.railway.app/bookings", {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -96,7 +96,7 @@ const AdminPanel = () => {
 
 
             try {
-                await axios.delete(`http://localhost:3001/rooms/${roomId}`, {
+                await axios.delete(`https://wanderstay-backend-production.up.railway.app/rooms/${roomId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -134,7 +134,7 @@ const AdminPanel = () => {
         try {
 
             await axios.put(
-                `http://localhost:3001/rooms/${editRoomId}`,
+                `https://wanderstay-backend-production.up.railway.app/rooms/${editRoomId}`,
                 editRoomData,
                 {
                     headers: {
