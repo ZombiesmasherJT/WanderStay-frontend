@@ -39,7 +39,11 @@ function Login() {
 
 
         try {
-            const response = await axios.post("http://localhost:3001/auth/login", {
+            const response = await axios.post("https://wanderstay-backend-production.up.railway.app/auth/login", {
+  email,
+  password
+});
+", {
                 email,
                 password
             });
