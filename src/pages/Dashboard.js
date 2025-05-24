@@ -40,7 +40,8 @@ const Dashboard = () => {
         const fetchBookings = async () => {
             try {
                 const token = localStorage.getItem("token");
-                const response = await axios.get("http://localhost:3001/bookings", {
+                const response = await axios.get("https://wanderstay-backend-production.up.railway.app/bookings
+", {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -86,7 +87,7 @@ const Dashboard = () => {
     const submitEdit = async (bookingId) => {
         const token = localStorage.getItem("token");
         try {
-            const response = await axios.put(`http://localhost:3001/bookings/${bookingId}`, {
+            const response = await axios.put(`https://wanderstay-backend-production.up.railway.app/bookings/${bookingId}`, {
                 checkInDate: editDates.checkInDate,
                 checkOutDate: editDates.checkOutDate,
                 status: "confirmed",
@@ -101,7 +102,7 @@ const Dashboard = () => {
             setEditingBooking(null);
             //REFRESH A BOOKING in the system
 
-            const updated = await axios.get("http://localhost:3001/bookings", {
+            const updated = await axios.get("https://wanderstay-backend-production.up.railway.app/bookings", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -132,7 +133,7 @@ const Dashboard = () => {
 
         try {
 
-            await axios.delete(`http://localhost:3001/bookings/${bookingId}`, {
+            await axios.delete(`https://wanderstay-backend-production.up.railway.app/bookings/${bookingId}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -143,7 +144,7 @@ const Dashboard = () => {
             // Refresh the bookings list after deletion
 
 
-            const updated = await axios.get("http://localhost:3001/bookings", {
+            const updated = await axios.get("https://wanderstay-backend-production.up.railway.app/bookings", {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
