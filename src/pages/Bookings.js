@@ -5,8 +5,6 @@ import "../styles/Bookings.css";
 
 //for adding date types for creating a bookings
 
-//also reasearch state hooks for persoanl project
-
 
 function Bookings() {
     const [rooms, setRooms] = useState([]);
@@ -29,15 +27,15 @@ function Bookings() {
         , []);
 
 
-  //  useEffect(() => {
-    //    axios.get("https://wanderstay-backend-production.up.railway.app/bookings")
-      //      .then((response) => {
-        //        setBookings(response.data);
-          //  })
-           // .catch((error) => {
-            //    console.log("error: ", error);
-          //  });
-   // }, []);
+    useEffect(() => {
+      axios.get("https://wanderstay-backend-production.up.railway.app/bookings")
+          .then((response) => {
+               setBookings(response.data);
+           })
+           .catch((error) => {
+                console.log("error: ", error);
+            });
+    }, []);
 
 
     //code to ensure that a user is logged in to be able to do a post booking request
