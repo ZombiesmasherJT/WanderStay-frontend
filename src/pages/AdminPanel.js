@@ -31,12 +31,7 @@ const AdminPanel = () => {
         // Fetch all rooms from the server for admin panel
 
 
-        axios.get("https://wanderstay-backend-production.up.railway.app/rooms", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        })
-
+        axios.get("https://wanderstay-backend-production.up.railway.app/rooms")
             .then((response) => setRooms(response.data))
             .catch((error) => console.error("error when fetching rooms: ", error));
 
