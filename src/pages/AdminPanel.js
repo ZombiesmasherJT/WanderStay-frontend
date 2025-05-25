@@ -78,7 +78,14 @@ const AdminPanel = () => {
             setNewRoom({ roomType: "", price: "", availability: true, description: "" }); // reset the form fields
             alert("Room is now created successfully");
         } catch (error) {
-            console.error("error when creating room: ", error);
+
+            console.error("error when creating room:", error.response?.data || error.message || error);
+
+           
+            
+            // console.error("error when creating room: ", error);
+
+            
             alert("Error creating room. Please try again.");
         }
 
